@@ -40,7 +40,7 @@ export const ingredients = [
     {id: '10Whole', name: '10 Inch wholemean', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1580507756/burgerIngredients/10InchWholeMeal.png', category: 'bun'},
     {id: 'MCKP', name: 'McChicken Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/mc-chicken-01.png', category: 'kfc'},
     {id: 'CRSPY', name: 'Crispy', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/crispy-01.png', category: 'kfc'},
-    {id: 'HCRSPY', name: 'Crispy', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/half-crispy-01.png', category: 'kfc'},
+    {id: 'HCRSPY', name: 'Half Crispy', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/half-crispy-01.png', category: 'kfc'},
     {id: 'GRCK', name: 'Grilled Chicken', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/grill-chicken-01.png', category: 'kfc'},
     {id: 'HGRCK', name: 'Half Grilled Chicken', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/half-grill-chicken-01.png', category: 'kfc'},
     {id: 'CNC', name: 'CNC', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/cnc-01.png', category: 'kfc'},
@@ -77,7 +77,7 @@ export const burgers = [
     {
       id: 'boss', 
       name: "The Boss", 
-      ingredients: ['QTRC', 'Mu', 'K', 'Mac', 'SO', 'L', 'T', 'McD', '4:10', 'McD', '4:10', 'QTRH'],
+      ingredients: ['QTRC', 'Mu', 'K', 'Mac', 'SO', 'L', 'T', 'TSTYCH', '4:10', 'McD', '4:10', 'QTRH'],
       steamed: false   
     },
     {
@@ -101,7 +101,7 @@ export const burgers = [
     {
       id: 'BGCH',
       name: "The Big Cheese", 
-      ingredients: ['BIRC', 'Mu', 'Mu', 'Mu', 'K', 'P', 'P', 'P', 'P', 'McD', '4:10:ANGUS', 'Swiss', '4:10:ANGUS', 'McD', 'SBCN', 'CO','BIRH'],
+      ingredients: ['BIRC', 'Mu', 'Mu', 'Mu', 'K', 'P', 'P', 'P', 'P', 'TSTYCH', '4:10:ANGUS', 'Swiss', '4:10:ANGUS', 'McD', 'SBCN', 'CO','BIRH'],
       steamed: false
     },
     {
@@ -248,4 +248,16 @@ export const burgers = [
       ingredients: ['RBC', 'Tartar', 'FLL', '1/2McD', 'RBH'],
       steamed: true
     },
+    {
+      id: 'LOADL', 
+      name: "The Loaded Lettuce", 
+      ingredients: ['LL', 'TSTYCH', 'CRSPY', 'EGG', 'SBCN', 'CO', 'T', 'BTROOT', 'MCKP', 'LL'],
+      steamed: true
+    },
+    {
+      id: 'LOADL', 
+      name: "The Loaded Angus", 
+      ingredients: ['LL', 'TSTYCH', '4:10:ANGUS', 'EGG', 'SBCN', 'CO', 'T', 'BTROOT', 'MCKP', 'LL'],
+      steamed: true
+    }
   ]

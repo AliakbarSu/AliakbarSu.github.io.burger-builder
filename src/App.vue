@@ -76,9 +76,11 @@ export default {
       if(burger) {
         this.wasMadeCorrectly = burger.ingredients.length === currentIngredientIds.length && burger.ingredients.every((item, index) => currentIngredientIds[index] === item) && burger.steamed == this.currentBurger.steamed;
       if(this.wasMadeCorrectly) {
-         this.clearScreen();
+        setTimeout(() => {
+          this.reset()
           this.generateOrder();
-         }
+        }, 2000)
+        }
       }
     },
     generateOrder() {
