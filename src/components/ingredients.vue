@@ -30,8 +30,13 @@ import Ingredient from './ingredient.vue'
             }
         },
         computed: {
-            ingredients() {
-                return this[this.activeCategory]
+            ingredients: {
+                set() {
+
+                },
+                get() {
+                    return this[this.activeCategory]
+                }
             }
         },
         methods: {

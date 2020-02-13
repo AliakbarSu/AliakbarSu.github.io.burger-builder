@@ -4,11 +4,15 @@
         @newOrder="generateOrder" 
         @serve="serve" 
         @reset="reset"
+        @auto="toggleAuto"
         @preview="togglePreview" 
+        @next="next"
+        @prev="prev"
+        :orders="orders"
+        :activeOrder="getActiveOrder"
         class="c-monitor" 
         :preview="preview"
-        :previewBurger='previewBurger'
-        :currentOrder="currentBurger"/>
+        :previewBurger='previewBurger'/>
       <!-- <Results :submit="submit" :wasMadeCorrectly="wasMadeCorrectly" class="c-results"/> -->
       <Makeline
         @leftUpdate="leftUpate"
@@ -35,9 +39,13 @@ export default {
   name: 'app',
   data() {
     return {
+      auto: false,
+      autoInterval: null,
       waste: [],
       ingredients,
       burgers,
+      orders: [],
+      activeOrder: "",
       currentBurger: {
         left: {
           ingredients: [],
@@ -45,13 +53,7 @@ export default {
         right: {
           ingredients: [],
         },
-        id: '',
-        name: '',
         steamed: false
-      },
-      order: {
-        id: '',
-        name: ''
       },
       wasMadeCorrectly: false,
       submit: false,
@@ -64,21 +66,33 @@ export default {
     Monitor,
     // Results
   },
+  mounted() {
+    this.audio = new Audio(require('./assets/sounds/newOrder.mp3'))
+  },
   methods: {
+    generateId() {
+      return '_' + Math.random().toString(36).substr(2, 9);
+    },
     serve() {
       this.submit = true;
-      const burger = this.burgers.find(bg => bg.id == this.currentBurger.id);
+      const burger = this.burgers.find(bg => bg.id == this.getActiveOrder.order.id);
       const leftIngredientsCopy = [...this.currentBurger.left.ingredients]
       leftIngredientsCopy.reverse()
       const currentBurgerIngredients = [...leftIngredientsCopy, ...this.currentBurger.right.ingredients]
-      console.log(currentBurgerIngredients)
       const currentIngredientIds = currentBurgerIngredients.map(ing => ing.id);
       if(burger) {
         this.wasMadeCorrectly = burger.ingredients.length === currentIngredientIds.length && burger.ingredients.every((item, index) => currentIngredientIds[index] === item) && burger.steamed == this.currentBurger.steamed;
       if(this.wasMadeCorrectly) {
+        const orderIndex = this.orders.findIndex(ord => ord.id == this.activeOrder)
+        const prevOrder = this.activeOrder
+        if(orderIndex == this.orders.length - 1) {
+          this.prev()
+        }else {
+          this.next()
+        }
+        this.orders = this.orders.filter(order => order.id !== prevOrder)
         setTimeout(() => {
           this.reset()
-          this.generateOrder();
         }, 2000)
         }
       }
@@ -92,6 +106,18 @@ export default {
       const randomBurger = this.burgers[getRandomIndex(0, this.burgers.length)];
       this.currentBurger.id = randomBurger.id;
       this.currentBurger.name = randomBurger.name;
+      const order = {
+        id: this.generateId(),
+        order: {
+          id: randomBurger.id,
+          name: randomBurger.name
+        }
+      }
+      this.orders.push(order)
+      this.newOrderPlay()
+      if(this.orders.length == 1) {
+        this.activeOrder = this.orders[0].id
+      }
     },
     reset() {
       this.submit = false;
@@ -116,11 +142,37 @@ export default {
     },
     rightUpdate(updatedIngredients) {
       this.currentBurger.right.ingredients = updatedIngredients
+    },
+    next() {
+      const orderIndex = this.orders.findIndex(ord => ord.id == this.activeOrder);
+      if(orderIndex < (this.orders.length - 1)) {
+        this.activeOrder = this.orders[orderIndex + 1].id
+      }
+    },
+    prev() {
+      const orderIndex = this.orders.findIndex(ord => ord.id == this.activeOrder);
+      if(orderIndex > 0) {
+        this.activeOrder = this.orders[orderIndex - 1].id
+      }
+    },
+    toggleAuto() {
+      if(this.auto) {
+        this.auto = false;
+        clearInterval(this.autoInterval)
+        return;
+      }
+      this.autoInterval = setInterval(() => {
+        this.generateOrder();
+      }, 10000)
+      this.auto = true;
+    },
+    newOrderPlay() {
+      this.audio.play()
     }
   },
   computed: {
     previewBurger() {
-      const burger = this.burgers.find(b => b.id === this.currentBurger.id);
+      const burger = this.burgers.find(b => b.id === this.getActiveOrder.order.id);
       if(burger) {
         return burger.ingredients.map(b => {
           const ingd = this.ingredients.find(ing => ing.id == b);
@@ -132,6 +184,20 @@ export default {
         return []
       }
       
+    },
+    getActiveOrder() {
+      const activeOrder = this.orders.find(ord => ord.id == this.activeOrder)
+      if(activeOrder) {
+        return activeOrder
+      }else {
+        return {
+          id: '',
+          order: {
+            id: '',
+            name: ''
+          }
+        }
+      }
     },
     others() {
       return this.ingredients.filter(ing => ing.category == "others")
@@ -145,6 +211,9 @@ export default {
     buns() {
       return this.ingredients.filter(ing => ing.category == "bun")
     }
+  },
+  beforeDestroy() {
+    clearInterval(this.autoInterval)
   }
 }
 </script>

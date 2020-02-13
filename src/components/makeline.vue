@@ -114,6 +114,7 @@ import draggable from 'vuedraggable'
 
 <style scoped>
 
+
 .c-makeline {
     display: flex;
     flex-wrap: wrap;
@@ -161,17 +162,16 @@ import draggable from 'vuedraggable'
 .c-makeline__plates {
     min-height: 65px;
     padding-bottom: 20px;
-    /* background: red; */
     width: 200px;
     margin: 0 10px;
-    /* background-image: url('https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/burger-box-01.png'); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 @media screen and (max-width: 900px) {
@@ -182,6 +182,11 @@ import draggable from 'vuedraggable'
   .c-makeline__bin {
         left: 0;
         top: 0;
+        width: 40px;
+    }
+
+    .o-makeline {
+        padding-top: 120px;
     }
 }
 

@@ -3,13 +3,17 @@
         <div class="c-monitor__display">
             <img class="display__thumbnail" src="https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581507919/burger-builder/ingredients/monitor-01.png"/>
             <div class="c-monitor__orders">
-                <div class="display__caption">
-                    <span>{{currentOrder.name}}</span>
-                    <div class='c-monitor__preview' v-if="preview">
-                    <div v-for="(pr, index) in previewBurger" :key="index" class='c-ingredients__items'>
-                        {{pr}}
+                <div 
+                    v-for="order in orders" 
+                    :key="order.id"
+                    :class="{'display__caption--isActive': isActive(order.id)}" 
+                    class="display__caption">
+                    <span>{{order.order.name}}</span>
+                    <div class='c-monitor__preview' v-if="preview && order.id == activeOrder.id">
+                        <div v-for="(pr, index) in previewBurger" :key="index" class='c-ingredients__items'>
+                            {{pr}}
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
             <div class="c-monitor__controls">
@@ -19,22 +23,11 @@
                 <div class="c-monitor__buttons c-monitor__buttons--green" @click="serve">Serve</div>
                 <div class="c-monitor__buttons c-monitor__buttons--purple" @click="newOrder">New</div>
             </div>
+             <div class="c-monitor__controls c-monitor__controls--bottom">
+                <div class="c-monitor__buttons c-monitor__buttons--red" @click="prev">Prev</div>
+                <div class="c-monitor__buttons c-monitor__buttons--blue" @click="next">Next</div>
+            </div>
         </div>
-        <!-- <div class="c-monitor__controls">
-            <div class="c-monitor__buttons c-monitor__buttons--purple" @click="newOrder">New Order</div>
-            <div class="c-monitor__buttons c-monitor__buttons--blue" @click="auto">Auto</div>
-            <div class="c-monitor__buttons c-monitor__buttons--green" @click="serve">Serve</div>
-            <div class="c-monitor__buttons c-monitor__buttons--red" @click="reset">Reset</div>
-            <div @click="togglePreview" class="c-monitor__buttons c-monitor__buttons--full-width">{{preview ? 'Hide Ingredients' : 'Show Ingredients'}}</div>
-        </div>
-        <draggable 
-            class="c-monitor__bin" 
-            tag='div' 
-            group="people" 
-            @start="drag=true"  
-            @end="drag=false">
-            <img class="rabish-bin__thumbnail" src='https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581199981/burgerIngredients/text-symbol-brand-trash.png'/>
-        </draggable> -->
         <div class="c-makeline__table"></div>
     </div>
 </template>
@@ -42,7 +35,7 @@
 <script>
 // import draggable from 'vuedraggable'
     export default {
-        props: ['currentOrder', 'preview', 'previewBurger'],
+        props: ['preview', 'previewBurger', 'orders', 'activeOrder'],
         methods: {
             serve() {
                 this.$emit('serve')
@@ -56,8 +49,17 @@
             reset() {
                 this.$emit('reset')
             },
+            prev() {
+                this.$emit('prev')
+            },
+            next() {
+                this.$emit('next')
+            },
             togglePreview() {
                 this.$emit('preview')
+            },
+            isActive(orderId) {
+                return this.activeOrder.id == orderId
             }
         },
         components: {
@@ -89,10 +91,12 @@
 .c-monitor__orders {
     position: absolute;
     display: flex;
+    flex-wrap: wrap;
     top: 20px;
     right: 25px;
     width: 272px;
     max-height: 192px;
+    overflow-y: scroll;
 }
 
 .display__caption {
@@ -107,7 +111,12 @@
     border-top: 3px solid yellow;
     min-height: 20px;
     max-height: 176px;
-    overflow: scroll;
+    /* overflow: scroll; */
+    margin: 2px;
+}
+
+.display__caption--isActive {
+    border-top: 3px solid red !important;
 }
 
 .c-monitor__controls {
@@ -118,6 +127,11 @@
     top: 223px;
     justify-content: space-between;
     width: 254px;
+}
+
+.c-monitor__controls--bottom {
+    top: 241px;
+    width: 100px;
 }
 
 .c-monitor__buttons {
@@ -161,6 +175,12 @@
         right: 20px;
         top: 168px;
         width: 190px;
+    }
+
+    .c-monitor__controls--bottom {
+        right: 20px;
+        top: 181px;
+        width: 71px;
     }
 
     .c-monitor__buttons {
