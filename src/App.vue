@@ -69,13 +69,6 @@ export default {
   },
   mounted() {
     this.audio = new Audio(require('./assets/sounds/newOrder.mp3'));
-    const that = this;
-      (function ontimeout(){
-        if(that.auto){
-          that.generateOrder();
-          that.autoInterval = setTimeout(ontimeout, Math.random() * 10);
-        }
-      })();
   },
   methods: {
     generateId() {
@@ -170,6 +163,13 @@ export default {
         return;
       }
       this.auto = true;
+      this.ontimeout()
+    },
+    ontimeout() {
+      if(this.auto){
+          this.generateOrder();
+          this.autoInterval = setTimeout(this.ontimeout, Math.random() * 30000);
+        }
     },
     newOrderPlay() {
       this.audio.play()
