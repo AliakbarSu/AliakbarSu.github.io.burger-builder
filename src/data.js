@@ -15,7 +15,7 @@ export const ingredients = [
     {id: '1/2McD', name: 'Half Cheese', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/half-cheese-01.png', category: 'others'},
     {id: 'BTROOT', name: 'Beetroot', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/beetroot-01.png', category: 'others'},
     {id: 'HSB', name: 'Hash Brown', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/hash-brown-01.png', category: 'others'},
-    {id: 'Mayo', name: 'Mayo', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1580506100/burgerIngredients/mayo.png', category: 'sauce'},
+    {id: 'GMayo', name: 'Garlic Aioli Mayo', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1580506100/burgerIngredients/mayo.png', category: 'sauce'},
     {id: 'Tartar', name: 'Tartar', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/tartar-01.png', category: 'sauce'},
     {id: 'EGG', name: 'Round Egg', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/egg-01.png', category: 'kfc'},
     {id: 'BMac', name: 'Big Mac Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/big-mac-sauce-01.png', category: 'sauce'},
@@ -215,13 +215,13 @@ export const burgers = [
     {
       id: 'CBDLX', 
       name: "GRL Chicken Bacon Deluxe", 
-      ingredients: ['CBC', 'Mac', 'LL', 'T', 'TSTYCH', 'GRCK', 'SBCN', 'CBH'],
+      ingredients: ['CBC', 'GMayo', 'LL', 'T', 'TSTYCH', 'GRCK', 'SBCN', 'CBH'],
       steamed: false
     },
     {
       id: 'CCBDLX', 
       name: "Crispy Chicken Bacon Deluxe", 
-      ingredients: ['CBC', 'Mac', 'LL', 'T', 'TSTYCH', 'CRSPY', 'SBCN', 'CBH'],
+      ingredients: ['CBC', 'GMayo', 'LL', 'T', 'TSTYCH', 'CRSPY', 'SBCN', 'CBH'],
       steamed: false
     },
     {
@@ -258,6 +258,12 @@ export const burgers = [
       id: 'LOADL', 
       name: "The Loaded Angus", 
       ingredients: ['LL', 'TSTYCH', '4:10:ANGUS', 'EGG', 'SBCN', 'CO', 'T', 'BTROOT', 'MCKP', 'LL'],
+      steamed: true
+    },
+    {
+      id: 'CHMCMFN', 
+      name: "Chicken McMuffin", 
+      ingredients: ['MFFINC', 'Mac', 'MCKP', 'McD', 'MFFINH'],
       steamed: true
     }
   ]

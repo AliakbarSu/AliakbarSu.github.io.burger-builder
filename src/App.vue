@@ -8,6 +8,7 @@
         @preview="togglePreview" 
         @next="next"
         @prev="prev"
+        @makeActive="makeActive"
         :orders="orders"
         :activeOrder="getActiveOrder"
         class="c-monitor" 
@@ -67,7 +68,14 @@ export default {
     // Results
   },
   mounted() {
-    this.audio = new Audio(require('./assets/sounds/newOrder.mp3'))
+    this.audio = new Audio(require('./assets/sounds/newOrder.mp3'));
+    const that = this;
+      (function ontimeout(){
+        if(that.auto){
+          that.generateOrder();
+          that.autoInterval = setTimeout(ontimeout, Math.random() * 10);
+        }
+      })();
   },
   methods: {
     generateId() {
@@ -158,16 +166,16 @@ export default {
     toggleAuto() {
       if(this.auto) {
         this.auto = false;
-        clearInterval(this.autoInterval)
+        clearTimeout(this.autoInterval);
         return;
       }
-      this.autoInterval = setInterval(() => {
-        this.generateOrder();
-      }, 10000)
       this.auto = true;
     },
     newOrderPlay() {
       this.audio.play()
+    },
+    makeActive(orderIndex) {
+      this.activeOrder = this.orders[orderIndex].id
     }
   },
   computed: {

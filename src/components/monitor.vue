@@ -3,8 +3,9 @@
         <div class="c-monitor__display">
             <img class="display__thumbnail" src="https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581507919/burger-builder/ingredients/monitor-01.png"/>
             <div class="c-monitor__orders">
-                <div 
-                    v-for="order in orders" 
+                <div
+                    @click="makeActive(index)" 
+                    v-for="(order, index) in orders" 
                     :key="order.id"
                     :class="{'display__caption--isActive': isActive(order.id)}" 
                     class="display__caption">
@@ -60,6 +61,9 @@
             },
             isActive(orderId) {
                 return this.activeOrder.id == orderId
+            },
+            makeActive(orderIndex) {
+                this.$emit("makeActive", orderIndex);
             }
         },
         components: {
@@ -110,13 +114,16 @@
     font-size: 0.8em;
     border-top: 3px solid yellow;
     min-height: 20px;
-    max-height: 176px;
-    /* overflow: scroll; */
+    max-height: 40px;
+    height: auto;
+    overflow: visible;
     margin: 2px;
+    cursor: pointer;
 }
 
 .display__caption--isActive {
     border-top: 3px solid red !important;
+    max-height: 600px;
 }
 
 .c-monitor__controls {
