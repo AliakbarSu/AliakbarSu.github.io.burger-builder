@@ -25,8 +25,13 @@
                 <div class="c-monitor__buttons c-monitor__buttons--purple" @click="newOrder">New</div>
             </div>
              <div class="c-monitor__controls c-monitor__controls--bottom">
+                <div class="c-monitor__buttons c-monitor__buttons--blue" @click="clear">Clear</div>
                 <div class="c-monitor__buttons c-monitor__buttons--red" @click="prev">Prev</div>
                 <div class="c-monitor__buttons c-monitor__buttons--blue" @click="next">Next</div>
+            </div>
+            <div class="c-monitor__categories">
+                <h2 class="c-categories__heading">Filters</h2>
+                <div @click="addFilter(cat)" class="c-categories__items" :class="{'c-categories__items--active': isInFilters(cat)}" v-for="cat in categories" :key="cat">{{cat}}</div>
             </div>
         </div>
         <div class="c-makeline__table"></div>
@@ -36,7 +41,7 @@
 <script>
 // import draggable from 'vuedraggable'
     export default {
-        props: ['preview', 'previewBurger', 'orders', 'activeOrder'],
+        props: ['preview', 'previewBurger', 'orders', 'activeOrder', 'categories', 'filters'],
         methods: {
             serve() {
                 this.$emit('serve')
@@ -56,6 +61,9 @@
             next() {
                 this.$emit('next')
             },
+            clear() {
+                this.$emit('clear')
+            },
             togglePreview() {
                 this.$emit('preview')
             },
@@ -64,6 +72,12 @@
             },
             makeActive(orderIndex) {
                 this.$emit("makeActive", orderIndex);
+            },
+            addFilter(filter) {
+                this.$emit("addFilter", filter)
+            },
+            isInFilters(cat) {
+                return this.filters.indexOf(cat) !== -1;
             }
         },
         components: {
@@ -138,7 +152,7 @@
 
 .c-monitor__controls--bottom {
     top: 241px;
-    width: 100px;
+    width: 150px;
 }
 
 .c-monitor__buttons {
@@ -151,6 +165,39 @@
     font-size: 0.7em;
     width: 48px;
 }
+
+.c-monitor__categories {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 32px;
+    top: 300px;
+    justify-content: space-between;
+    width: 254px;
+}
+
+.c-categories__heading {
+    width: 100%;
+    background: #e8e8e8;
+    padding: 2px 5px;
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 1em;
+    text-align: left;
+}
+
+.c-categories__items {
+    background: brown;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.c-categories__items--active {
+    background: green;
+}
+
 
 .c-monitor__preview {
     font-size: 0.8em;
@@ -187,7 +234,7 @@
     .c-monitor__controls--bottom {
         right: 20px;
         top: 181px;
-        width: 71px;
+        width: 110px;
     }
 
     .c-monitor__buttons {
@@ -199,6 +246,13 @@
     .c-monitor__orders {
         width: 200px;
         max-height: 135px;
+    }
+
+    .c-monitor__categories {
+        font-size: 0.8em;
+        right: 11px;
+        top: 217px;
+        width: 220px;
     }
 }
 

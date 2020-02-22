@@ -8,7 +8,11 @@
         @preview="togglePreview" 
         @next="next"
         @prev="prev"
+        @clear="clear"
         @makeActive="makeActive"
+        @addFilter="addFilter"
+        :filters="filters"
+        :categories="categories"
         :orders="orders"
         :activeOrder="getActiveOrder"
         class="c-monitor" 
@@ -45,6 +49,7 @@ export default {
       waste: [],
       ingredients,
       burgers,
+      filters: [],
       orders: [],
       activeOrder: "",
       currentBurger: {
@@ -104,7 +109,7 @@ export default {
         // max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
       }
-      const randomBurger = this.burgers[getRandomIndex(0, this.burgers.length)];
+      const randomBurger = this.filteredBurgers[getRandomIndex(0, this.filteredBurgers.length)];
       this.currentBurger.id = randomBurger.id;
       this.currentBurger.name = randomBurger.name;
       const order = {
@@ -156,6 +161,10 @@ export default {
         this.activeOrder = this.orders[orderIndex - 1].id
       }
     },
+    clear() {
+      this.activeOrder = ""
+      this.orders = [];
+    },
     toggleAuto() {
       if(this.auto) {
         this.auto = false;
@@ -176,6 +185,13 @@ export default {
     },
     makeActive(orderIndex) {
       this.activeOrder = this.orders[orderIndex].id
+    },
+    addFilter(filter) {
+      if(this.filters.indexOf(filter) !== -1) {
+        this.filters = this.filters.filter(f => f !== filter);
+        return;
+      }
+      this.filters.push(filter)
     }
   },
   computed: {
@@ -192,6 +208,12 @@ export default {
         return []
       }
       
+    },
+    filteredBurgers() {
+      if(this.filters.length == 0) {
+        return this.burgers
+      }
+      return this.burgers.filter(bg => this.filters.indexOf(bg.category) !== -1)
     },
     getActiveOrder() {
       const activeOrder = this.orders.find(ord => ord.id == this.activeOrder)
@@ -218,6 +240,16 @@ export default {
     },
     buns() {
       return this.ingredients.filter(ing => ing.category == "bun")
+    },
+    categories() {
+      const categories = [];
+      const all_categories = this.burgers.map(bg => bg.category);
+      all_categories.forEach(bg => {
+        if (categories.indexOf(bg) == -1) {
+          categories.push(bg)
+        }
+      })
+      return categories
     }
   },
   beforeDestroy() {

@@ -5,7 +5,7 @@
                 tag='div' class="c-makeline__plates" 
                 v-model="leftIngredients" 
                 group="people"
-                :style="{'background-image': getBoxThumbnail}" 
+                :style="{'background-image': getBoxThumbnail('top')}" 
                 @start="drag=true" 
                 @end="drag=false">
                 <img 
@@ -19,7 +19,7 @@
                 class="c-makeline__plates"  
                 v-model="rightIngredients" 
                 group="people"
-                :style="{'background-image': getBoxThumbnail}"
+                :style="{'background-image': getBoxThumbnail('bottom')}"
                 @start="drag=true"  
                 @end="drag=false">
                 <img 
@@ -31,8 +31,8 @@
             </draggable>
 
             <div class='c-steam-oven'>
-                <img @click="toggleSteam" v-if='isSteamed' class='c-steam-oven__thumbnail' src='https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581541797/burger-builder/ingredients/on-oven-01.png'/>
-                <img @click="toggleSteam" v-else class='c-steam-oven__thumbnail' src='https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/oven-01.png'/>
+                <img @click="toggleSteam" v-if='isSteamed' class='c-steam-oven__thumbnail' src='https://res.cloudinary.com/dxuf2ssx6/image/upload/v1582240312/burger-builder/ingredients/on-oven-01.png'/>
+                <img @click="toggleSteam" v-else class='c-steam-oven__thumbnail' src='https://res.cloudinary.com/dxuf2ssx6/image/upload/v1582240312/burger-builder/ingredients/oven-01.png'/>
             </div>
         
             <draggable 
@@ -92,21 +92,28 @@ import draggable from 'vuedraggable'
             },
             getUrl(url) {
                 return `url(${url})`;
+            },
+            getBoxThumbnail(pos) {
+                if(this.submit && !this.wasMadeCorrectly) {
+                    if(pos == "top") {
+                        return this.getUrl('https://res.cloudinary.com/dxuf2ssx6/image/upload/v1582240312/burger-builder/ingredients/red-burger-box-01.png');
+                    }
+                    return this.getUrl('https://res.cloudinary.com/dxuf2ssx6/image/upload/v1582240312/burger-builder/ingredients/red-burger-box-bottom-01.png')
+
+                }else if(this.submit && this.wasMadeCorrectly) {
+                    return this.getUrl('https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581542822/burger-builder/ingredients/green-burger-box-01.png')
+                }else {
+                    if(pos == "top") {
+                        return this.getUrl('https://res.cloudinary.com/dxuf2ssx6/image/upload/v1582240312/burger-builder/ingredients/burger-box-top-01.png')                        
+                    }
+                    return this.getUrl('https://res.cloudinary.com/dxuf2ssx6/image/upload/v1582240312/burger-builder/ingredients/burger-box-01.png')
+                }
+                
             }
         },
         computed: {
             isSteamed() {
                 return this.steamed
-            },
-            getBoxThumbnail() {
-                if(this.submit && !this.wasMadeCorrectly) {
-                    return this.getUrl('https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581542822/burger-builder/ingredients/red-burger-box-01.png')
-                }else if(this.submit && this.wasMadeCorrectly) {
-                    return this.getUrl('https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581542822/burger-builder/ingredients/green-burger-box-01.png')
-                }else {
-                    return this.getUrl('https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/burger-box-01.png')
-                }
-                
             }
         }
     }
@@ -161,7 +168,7 @@ import draggable from 'vuedraggable'
 
 .c-makeline__plates {
     min-height: 65px;
-    padding-bottom: 20px;
+    padding-bottom: 37px;
     width: 200px;
     margin: 0 10px;
     background-size: contain;

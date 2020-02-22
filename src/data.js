@@ -20,6 +20,7 @@ export const ingredients = [
     {id: 'EGG', name: 'Round Egg', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/egg-01.png', category: 'kfc'},
     {id: 'BMac', name: 'Big Mac Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/big-mac-sauce-01.png', category: 'sauce'},
     {id: 'Mac', name: 'McChicken Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/mc-chicken-sauce-01.png', category: 'sauce'},
+    {id: 'HOLS', name: 'Hollandaise Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/mc-chicken-sauce-01.png', category: 'sauce'},
     {id: 'SBBQ', name: 'Sothern BBQ Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476935/burger-builder/ingredients/southern-bbq-sauce-01.png', category: 'sauce'},
     {id: 'HBNRO', name: 'Habanero Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476935/burger-builder/ingredients/harabeno-01.png', category: 'sauce'},
     {id: 'JLPNO', name: 'Jalapeno Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476935/burger-builder/ingredients/jalapeno-01.png', category: 'sauce'},
@@ -47,6 +48,7 @@ export const ingredients = [
     {id: 'FLL', name: 'Fillet', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/fillet-01.png', category: 'kfc'},
     {id: '4:10', name: '4:10 Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/4-1.png', category: 'kfc'},
     {id: '4:10:ANGUS', name: 'Angus Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/angus-01.png', category: 'kfc'},
+    {id: 'SAP', name: 'Sausage Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/10-1.png', category: 'kfc'},
     {id: '1:10', name: '1:10 Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/10-1.png', category: 'kfc'},
     {id: 'MCVEG', name: 'McVeggie', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/mc-veggie-01.png', category: 'kfc'},
     {id: 'SBCN', name: 'Strip Bacon', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/strip-bacon-ai-01.png', category: 'kfc'},
@@ -57,213 +59,276 @@ export const ingredients = [
 
 export const burgers = [
     {
-      id: 'hbb', 
-      name: "Cheese", 
-      ingredients: ['RBC', 'Mu', 'K', 'P', '1:10', 'RBH'],
-      steamed: false
-    },
-    {
       id: 'ch', 
       name: "Cheese", 
       ingredients: ['RBC', 'Mu', 'K', 'P', 'McD', '1:10', 'RBH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'dbch', 
       name: "DBCheese", 
       ingredients: ['RBC', 'Mu', 'K', 'P', 'McD', '1:10', 'McD', '1:10', 'RBH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'boss', 
       name: "The Boss", 
       ingredients: ['QTRC', 'Mu', 'K', 'Mac', 'SO', 'L', 'T', 'TSTYCH', '4:10', 'McD', '4:10', 'QTRH'],
-      steamed: false   
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'kiwi', 
       name: "Kiwiburger", 
       ingredients: ['QTRC', 'Mu', 'K', 'SO', 'BTROOT', 'L', 'T', '4:10', 'EGG', 'McD','QTRH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'qtrpndr', 
       name: "Quarter Pounder", 
       ingredients: ['QTRC', 'Mu', 'K', 'SO', 'P', 'P', 'McD', '4:10', 'McD','QTRH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'dqtrpndr', 
       name: "Double Quarter Pounder", 
       ingredients: ['QTRC', 'Mu', 'K', 'SO', 'P', 'P', 'McD', '4:10', 'McD', '4:10', 'McD','QTRH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'BGCH',
       name: "The Big Cheese", 
       ingredients: ['BIRC', 'Mu', 'Mu', 'Mu', 'K', 'P', 'P', 'P', 'P', 'TSTYCH', '4:10:ANGUS', 'Swiss', '4:10:ANGUS', 'McD', 'SBCN', 'CO','BIRH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'texan', 
       name: "Almighty Texan BBQr", 
       ingredients: ['CBC', 'SBBQ', 'Mac', 'McD', '4:10:ANGUS', 'McD', '4:10:ANGUS', 'SBCN', 'CO', 'SBBQ', 'CBH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'GSNW', 
       name: "GRL Snack Wrap", 
-      ingredients: ['8Whole', 'Mayo', 'L', 'GRCK'],
-      steamed: true
+      ingredients: ['8Whole', 'Mac', 'L', 'HGRCK'],
+      steamed: true,
+      category: "wrap"
     },
     {
       id: 'CSNW', 
       name: "Crispy Snack Wrap", 
-      ingredients: ['8Whole', 'Mayo', 'L', 'CRSPY'],
-      steamed: true
+      ingredients: ['8Whole', 'Mac', 'L', 'HCRSPY'],
+      steamed: true,
+      category: "wrap"
+    },
+    {
+      id: 'GSAW', 
+      name: "GRL Aioli Wrap", 
+      ingredients: ['10Whole', 'Mayo', 'L', 'T', 'T', 'GRCK'],
+      steamed: true,
+      category: "wrap"
+    },
+    {
+      id: 'CSAW', 
+      name: "Crispy Aioli Wrap", 
+      ingredients: ['10Whole', 'Mayo', 'L', 'T', 'T', 'CRSPY'],
+      steamed: true,
+      category: "wrap"
     },
     {
       id: 'HBCK', 
       name: "Habanero McChicken", 
       ingredients: ['QTRC', 'HBNRO', 'L', 'MCKP', 'QTRH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'JBCK', 
       name: "Jalapeno McChicken", 
       ingredients: ['QTRC', 'JLPNO', 'L', 'MCKP', 'QTRH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'SBCK', 
       name: "Spicy Myo McChicken", 
       ingredients: ['QTRC', 'MYO', 'L', 'MCKP', 'QTRH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'HBMCV', 
       name: "Habanero McVeggie", 
       ingredients: ['CBC', 'HBNRO', 'REO', 'REO', 'REO', 'LL', 'T', 'MCVEG', 'CBH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'MYMCV', 
       name: "Spicy Mayo McVeggie", 
       ingredients: ['CBC', 'MYO', 'REO', 'REO', 'REO', 'LL', 'T', 'MCVEG', 'CBH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'JLMCV', 
       name: "Jalapeno McVeggie", 
       ingredients: ['CBC', 'JLPNO', 'REO', 'REO', 'REO', 'LL', 'T', 'MCVEG', 'CBH'],
-      steamed: false
-    },
-    {
-      id: 'CBRKB', 
-      name: "Crispy Big Brekkie Burger", 
-      ingredients: ['QTRC', 'SBBQ', 'McD', 'HSB', 'B', 'EGG', 'CRSPY', 'SBBQ', 'QTRH'],
-      steamed: false
-    },
-    {
-      id: 'BRKB', 
-      name: "Big Brekkie Beef Burger", 
-      ingredients: ['QTRC', 'SBBQ', 'McD', 'HSB', 'B', 'EGG', '4:10', 'SBBQ', 'QTRH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'CLBC', 
       name: "Crispy Clubhouse Chicken", 
       ingredients: ['BIRC', 'BMac', 'LL', 'T', 'Swiss', 'CRSPY', 'SBCN', 'CO', 'BMac', 'BIRH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'GCLBC', 
       name: "GRL Clubhouse Chicken", 
       ingredients: ['BIRC', 'BMac', 'LL', 'T', 'Swiss', 'GRCK', 'SBCN', 'CO', 'BMac', 'BIRH'],
-      steamed: false
-    },
-    {
-      id: 'BEGGMC', 
-      name: "Becan & Egg McMuffin", 
-      ingredients: ['MFFINC', 'B', 'EGG', 'McD', 'MFFINH'],
-      steamed: true
-    },
-    {
-      id: 'BLTB', 
-      name: "BLT Bagel", 
-      ingredients: ['BGLC', 'T', 'Mac', 'L', 'Mac', 'SBCN', 'BGLH'],
-      steamed: true
-    },
-    {
-      id: 'CKMFFIN', 
-      name: "Chicken mcMuffin", 
-      ingredients: ['MFFINC', 'MCKP', 'Mayo', 'MFFINH'],
-      steamed: true
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'SRANG', 
       name: "The Serious Angus", 
       ingredients: ['CBC', 'Mu', 'Mac', 'P', 'REO', 'REO', 'REO', 'LL', 'T', 'McD', '4:10:ANGUS', 'SBCN', 'McD', 'CBH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'DLXCB', 
       name: "Deluxe Cheeseburger", 
       ingredients: ['RBC', 'Mu', 'K', 'Mac', 'P', 'L', '1:10', 'RO', 'McD', 'RBH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'CBDLX', 
       name: "GRL Chicken Bacon Deluxe", 
       ingredients: ['CBC', 'GMayo', 'LL', 'T', 'TSTYCH', 'GRCK', 'SBCN', 'CBH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'CCBDLX', 
       name: "Crispy Chicken Bacon Deluxe", 
       ingredients: ['CBC', 'GMayo', 'LL', 'T', 'TSTYCH', 'CRSPY', 'SBCN', 'CBH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'CMCHE', 
       name: "Chick'n McCheese", 
       ingredients: ['RBC', 'K', 'Mac', 'L', 'McD', 'CNC', 'RBH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'BBQCHICK', 
       name: "BBQ Chicken", 
       ingredients: ['RBC', 'SBBQ', 'Mac', 'McD', 'MCKP', 'RBH'],
-      steamed: false
+      steamed: false,
+      category: "traditional"
     },
     {
       id: 'CBDLA', 
       name: "The Clubhouse Angus", 
       ingredients: ['BIRC', 'BMac', 'LL', 'T', 'Swiss', '4:10:ANGUS', 'SBCN', 'CO', 'BMac', 'BIRH'],
-      steamed: false
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'FLTF', 
       name: "Filet-o-Fish", 
       ingredients: ['RBC', 'Tartar', 'FLL', '1/2McD', 'RBH'],
-      steamed: true
+      steamed: true,
+      category: "traditional"
     },
     {
       id: 'LOADL', 
       name: "The Loaded Lettuce", 
       ingredients: ['LL', 'TSTYCH', 'CRSPY', 'EGG', 'SBCN', 'CO', 'T', 'BTROOT', 'MCKP', 'LL'],
-      steamed: true
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'LOADL', 
       name: "The Loaded Angus", 
       ingredients: ['LL', 'TSTYCH', '4:10:ANGUS', 'EGG', 'SBCN', 'CO', 'T', 'BTROOT', 'MCKP', 'LL'],
-      steamed: true
+      steamed: false,
+      category: "gourmet"
     },
     {
       id: 'CHMCMFN', 
       name: "Chicken McMuffin", 
-      ingredients: ['MFFINC', 'Mac', 'MCKP', 'McD', 'MFFINH'],
-      steamed: true
+      ingredients: ['MFFINC', 'McD', 'MCKP', 'Mac', 'MFFINH'],
+      steamed: false,
+      category: "breakfast"
+    },
+    {
+      id: 'CHBMCMFN', 
+      name: "Chicken & Bacon McMuffin", 
+      ingredients: ['MFFINC', 'McD', 'MCKP', 'SBCN', 'Mac', 'MFFINH'],
+      steamed: false,
+      category: "breakfast"
+    },
+    {
+      id: 'SAMCMFN', 
+      name: "Sausage McMuffin", 
+      ingredients: ['MFFINC','McD', 'SAP', 'MFFINH'],
+      steamed: false,
+      category: "breakfast"
+    },
+    {
+      id: 'SAEGGMCMFN', 
+      name: "Sausage & Egg McMuffin", 
+      ingredients: ['MFFINC','McD', 'SAP', 'EGG', 'MFFINH'],
+      steamed: false,
+      category: "breakfast"
+    },
+    {
+      id: 'MASMCMFN', 
+      name: "Massive McMuffin", 
+      ingredients: ['MFFINC','SAP', 'McD', 'SAP', 'EGG', 'SBCN', 'MFFINH'],
+      steamed: false,
+      category: "breakfast"
+    },
+    {
+      id: 'NYCBGL', 
+      name: "NYC Benedict Bagel", 
+      ingredients: ['BGLC','HOLS', 'McD', 'EGG', 'SBCN', 'BGLH'],
+      steamed: true,
+      category: "breakfast"
+    },
+    {
+      id: 'BRKB', 
+      name: "Big Brekkie Beef Burger", 
+      ingredients: ['QTRC', 'SBBQ', 'McD', 'HSB', 'B', 'EGG', '4:10', 'SBBQ', 'QTRH'],
+      steamed: false,
+      category: "breakfast"
+    },
+    {
+      id: 'BEGGMC', 
+      name: "Becan & Egg McMuffin", 
+      ingredients: ['MFFINC', 'B', 'EGG', 'McD', 'MFFINH'],
+      steamed: true,
+      category: "breakfast"
+    },
+    {
+      id: 'BLTB', 
+      name: "BLT Bagel", 
+      ingredients: ['BGLC', 'T', 'Mac', 'L', 'Mac', 'SBCN', 'BGLH'],
+      steamed: true,
+      category: "breakfast"
     }
   ]
