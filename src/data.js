@@ -4,7 +4,7 @@ export const ingredients = [
     {id: 'RO', name: 'Recon Onion', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1580506098/burgerIngredients/recon-onion.png', category: 'others'},
     {id: 'REO', name: 'Red Onion', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476935/burger-builder/ingredients/onion-slice-01.png', category: 'others'},
     {id: 'SO', name: 'Silvered Onions', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514138/burger-builder/ingredients/reg-onion-01.png', category: 'others'},
-    {id: 'CO', name: 'Caramelised Onion', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/caramelized-onion-01.png', category: 'kfc'},
+    {id: 'CO', name: 'Caramelised Onion', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/caramelized-onion-01.png', category: 'pfc'},
     {id: 'L', name: 'Shredded Lettuce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/shreded-lettuce-01.png', category: 'others'},
     {id: 'LL', name: 'Leaf Lettuice', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476935/burger-builder/ingredients/leaf-lettuce-01.png', category: 'others'},
     {id: 'P', name: 'Pickles', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/pickles-01.png', category: 'others'},
@@ -17,14 +17,11 @@ export const ingredients = [
     {id: 'HSB', name: 'Hash Brown', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/hash-brown-01.png', category: 'others'},
     {id: 'GMayo', name: 'Garlic Aioli Mayo', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1580506100/burgerIngredients/mayo.png', category: 'sauce'},
     {id: 'Tartar', name: 'Tartar', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/tartar-01.png', category: 'sauce'},
-    {id: 'EGG', name: 'Round Egg', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/egg-01.png', category: 'kfc'},
+    {id: 'EGG', name: 'Round Egg', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/egg-01.png', category: 'pfc'},
     {id: 'BMac', name: 'Big Mac Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/big-mac-sauce-01.png', category: 'sauce'},
     {id: 'Mac', name: 'McChicken Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/mc-chicken-sauce-01.png', category: 'sauce'},
     {id: 'HOLS', name: 'Hollandaise Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/mc-chicken-sauce-01.png', category: 'sauce'},
     {id: 'SBBQ', name: 'Sothern BBQ Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476935/burger-builder/ingredients/southern-bbq-sauce-01.png', category: 'sauce'},
-    {id: 'HBNRO', name: 'Habanero Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476935/burger-builder/ingredients/harabeno-01.png', category: 'sauce'},
-    {id: 'JLPNO', name: 'Jalapeno Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476935/burger-builder/ingredients/jalapeno-01.png', category: 'sauce'},
-    {id: 'MYO', name: 'Spicy Mayo Sauce', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476935/burger-builder/ingredients/spicy-mayo-01.png', category: 'sauce'},
     {id: 'RBC', name: 'Regular Bun Crown', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514138/burger-builder/ingredients/regular-bun-crown-01.png', category: 'bun'},
     {id: 'RBH', name: 'Regular Bun Heel', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/regular-bun-heel.png', category: 'bun'},
     {id: 'BIRC', name: "Brioche Bun Crown", thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514138/burger-builder/ingredients/brioche-bun-crown-01.png', category: 'bun'},
@@ -39,20 +36,20 @@ export const ingredients = [
     {id: 'BGLH', name: 'Bagel Heel', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/bagel-heel-01.png', category: 'bun'},
     {id: '8Whole', name: '8 Inch wholemeal', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1580507756/burgerIngredients/8InchWholemeal.png', category: 'bun'},
     {id: '10Whole', name: '10 Inch wholemean', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1580507756/burgerIngredients/10InchWholeMeal.png', category: 'bun'},
-    {id: 'MCKP', name: 'McChicken Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/mc-chicken-01.png', category: 'kfc'},
-    {id: 'CRSPY', name: 'Crispy', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/crispy-01.png', category: 'kfc'},
-    {id: 'HCRSPY', name: 'Half Crispy', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/half-crispy-01.png', category: 'kfc'},
-    {id: 'GRCK', name: 'Grilled Chicken', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/grill-chicken-01.png', category: 'kfc'},
-    {id: 'HGRCK', name: 'Half Grilled Chicken', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/half-grill-chicken-01.png', category: 'kfc'},
-    {id: 'CNC', name: 'CNC', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/cnc-01.png', category: 'kfc'},
-    {id: 'FLL', name: 'Fillet', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/fillet-01.png', category: 'kfc'},
-    {id: '4:10', name: '4:10 Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/4-1.png', category: 'kfc'},
-    {id: '4:10:ANGUS', name: 'Angus Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/angus-01.png', category: 'kfc'},
-    {id: 'SAP', name: 'Sausage Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/10-1.png', category: 'kfc'},
-    {id: '1:10', name: '1:10 Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/10-1.png', category: 'kfc'},
-    {id: 'MCVEG', name: 'McVeggie', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/mc-veggie-01.png', category: 'kfc'},
-    {id: 'SBCN', name: 'Strip Bacon', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/strip-bacon-ai-01.png', category: 'kfc'},
-    {id: 'B', name: 'Rashan Bacon', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/rasher-bacon-ai-01.png', category: 'kfc'},
+    {id: 'MCKP', name: 'McChicken Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/mc-chicken-01.png', category: 'pfc'},
+    {id: 'CRSPY', name: 'Crispy', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/crispy-01.png', category: 'pfc'},
+    {id: 'HCRSPY', name: 'Half Crispy', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/half-crispy-01.png', category: 'pfc'},
+    {id: 'GRCK', name: 'Grilled Chicken', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/grill-chicken-01.png', category: 'pfc'},
+    {id: 'HGRCK', name: 'Half Grilled Chicken', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/half-grill-chicken-01.png', category: 'pfc'},
+    {id: 'CNC', name: 'CNC', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/cnc-01.png', category: 'pfc'},
+    {id: 'FLL', name: 'Fillet', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/fillet-01.png', category: 'pfc'},
+    {id: '4:10', name: '4:10 Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/4-1.png', category: 'pfc'},
+    {id: '4:10:ANGUS', name: 'Angus Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/angus-01.png', category: 'pfc'},
+    {id: 'SAP', name: 'Sausage Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/10-1.png', category: 'pfc'},
+    {id: '1:10', name: '1:10 Patty', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476936/burger-builder/ingredients/10-1.png', category: 'pfc'},
+    {id: 'MCVEG', name: 'McVeggie', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581514139/burger-builder/ingredients/mc-veggie-01.png', category: 'pfc'},
+    {id: 'SBCN', name: 'Strip Bacon', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476934/burger-builder/ingredients/strip-bacon-ai-01.png', category: 'pfc'},
+    {id: 'B', name: 'Rashan Bacon', thumbnail: 'https://res.cloudinary.com/dxuf2ssx6/image/upload/v1581476933/burger-builder/ingredients/rasher-bacon-ai-01.png', category: 'pfc'},
     
 ]
 
@@ -143,48 +140,6 @@ export const burgers = [
       category: "wrap"
     },
     {
-      id: 'HBCK', 
-      name: "Habanero McChicken", 
-      ingredients: ['QTRC', 'HBNRO', 'L', 'MCKP', 'QTRH'],
-      steamed: false,
-      category: "traditional"
-    },
-    {
-      id: 'JBCK', 
-      name: "Jalapeno McChicken", 
-      ingredients: ['QTRC', 'JLPNO', 'L', 'MCKP', 'QTRH'],
-      steamed: false,
-      category: "traditional"
-    },
-    {
-      id: 'SBCK', 
-      name: "Spicy Myo McChicken", 
-      ingredients: ['QTRC', 'MYO', 'L', 'MCKP', 'QTRH'],
-      steamed: false,
-      category: "traditional"
-    },
-    {
-      id: 'HBMCV', 
-      name: "Habanero McVeggie", 
-      ingredients: ['CBC', 'HBNRO', 'REO', 'REO', 'REO', 'LL', 'T', 'MCVEG', 'CBH'],
-      steamed: false,
-      category: "gourmet"
-    },
-    {
-      id: 'MYMCV', 
-      name: "Spicy Mayo McVeggie", 
-      ingredients: ['CBC', 'MYO', 'REO', 'REO', 'REO', 'LL', 'T', 'MCVEG', 'CBH'],
-      steamed: false,
-      category: "gourmet"
-    },
-    {
-      id: 'JLMCV', 
-      name: "Jalapeno McVeggie", 
-      ingredients: ['CBC', 'JLPNO', 'REO', 'REO', 'REO', 'LL', 'T', 'MCVEG', 'CBH'],
-      steamed: false,
-      category: "gourmet"
-    },
-    {
       id: 'CLBC', 
       name: "Crispy Clubhouse Chicken", 
       ingredients: ['BIRC', 'BMac', 'LL', 'T', 'Swiss', 'CRSPY', 'SBCN', 'CO', 'BMac', 'BIRH'],
@@ -236,7 +191,7 @@ export const burgers = [
     {
       id: 'BBQCHICK', 
       name: "BBQ Chicken", 
-      ingredients: ['RBC', 'SBBQ', 'Mac', 'McD', 'MCKP', 'RBH'],
+      ingredients: ['RBC', 'SBBQ', 'Mac', 'McD', 'CNC', 'RBH'],
       steamed: false,
       category: "traditional"
     },
