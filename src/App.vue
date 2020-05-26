@@ -233,7 +233,7 @@ export default {
       return this.ingredients.filter(ing => ing.category == "others")
     },
     pfc() {
-      return this.ingredients.filter(ing => ing.category == "kfc")
+      return this.ingredients.filter(ing => ing.category == "pfc")
     },
     sauces() {
       return this.ingredients.filter(ing => ing.category == "sauce")
