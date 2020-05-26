@@ -88,6 +88,9 @@ export default {
       const currentIngredientIds = currentBurgerIngredients.map(ing => ing.id);
       if(burger) {
         this.wasMadeCorrectly = burger.ingredients.length === currentIngredientIds.length && burger.ingredients.every((item, index) => currentIngredientIds[index] === item) && burger.steamed == this.currentBurger.steamed;
+      if(burger.steamed != this.currentBurger.steamed) {
+        alert("You need to steam the buns!")
+      }
       if(this.wasMadeCorrectly) {
         const orderIndex = this.orders.findIndex(ord => ord.id == this.activeOrder)
         const prevOrder = this.activeOrder
